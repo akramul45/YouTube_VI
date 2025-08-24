@@ -1,0 +1,192 @@
+ 
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YouTube Analytics Tool</title>
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Bangla&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<!-- Font Awesome for Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<!-- Custom Stylesheet -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Header Section -->
+<header class="site-header">
+  <div class="header-content">
+    <div class="logo">
+    <div id="plt">AJ</div>
+    </div>
+    <div class="site-title">YouTube Analytics Tool</div>
+    <button id="menu-toggle" class="menu-toggle" aria-label="Open Menu">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</header>
+
+<!-- Navigation Menu -->
+<nav id="main-nav" class="main-nav">
+  <button id="menu-close" class="menu-close" aria-label="Close Menu">&times;</button>
+  <ul>
+    <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+    <li><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
+    <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
+  </ul>
+</nav>
+
+<main class="main-content">
+  <!-- Input Section - Always Visible -->
+  <section class="card">
+    <div class="input-group">
+      <input id="videoLink" placeholder="এখানে ভিডিও লিঙ্ক পেস্ট করুন">
+      <button id="post"><i class="fa-solid fa-paste"></i> Paste</button>
+    </div>
+    <div class="center-btn-container">
+      <button id="generate">Generate</button>
+    </div>
+  </section>
+
+  <div id="Loading"></div>
+  <div id="massege"></div>
+
+  <!-- Content Sections - Initially Hidden -->
+  <section class="card grid-2 content-section hidden">
+    <div class="video-info-left">
+      <img id="getThumbnail" src="https://via.placeholder.com/640x360?text=Video+Thumbnail" alt="Video Thumbnail">
+      <button id="downloadThumbnail">Download</button>
+      <div id="getUploadDateTime">আপলোড: --</div>
+      <div class="meta-data">
+        <span id="getViewNumber">👁️ 0</span>
+        <span id="getLikeNumber">👍 0</span>
+        <span id="getCommentNumber">💬 0</span>
+      </div>
+    </div>
+    <div class="video-info-right">
+      <div class="title-row">
+        <h4>Title</h4>
+        <button id="copyTitle">Copy</button>
+      </div>
+      <div id="getTitleContent">ভিডিওর নাম</div>
+      <p id="getAudience"><strong>শ্রোতা:</strong> --</p>
+      <p id="getCategory"><strong>ক্যাটাগরি:</strong> --</p>
+      <p id="getLicense"><strong>লাইসেন্স:</strong> --</p>
+    </div>
+  </section>
+
+  <section class="card content-section hidden">
+    <div class="title-row">
+      <h4>ট্যাগ</h4>
+      <div class="tag-buttons">
+        <button id="copySelected">S.copy</button>
+        <button id="copyAllTags">Copy</button>
+      </div>
+    </div>
+    <div id="getTagContent">#ভিডিও #সঙ্গীত #ডেমো</div>
+  </section>
+
+  <section class="card content-section hidden">
+    <div id="highlightCount">কপিরাইট: 0</div>
+    <div id="highLightTable"></div>
+  </section>
+
+  <section class="card content-section hidden">
+    <div class="title-row">
+      <h4>বর্ণনা</h4>
+      <button id="copyAllDescription">Copy</button>
+    </div>
+    <div id="getDescriptionContent">ভিডিও বর্ণনা এখানে থাকবে।</div>
+  </section>
+
+  <section class="card grid-3 content-section hidden">
+    <div class="channel-info-container">
+      <img id="getChannelLogo" src="https://via.placeholder.com/100?text=Logo" alt="Channel Logo">
+      <div id="getChannelName"><strong>নাম:</strong> চ্যানেল নাম</div>
+    </div>
+    <div class="channel-details">
+      <div class="channel-details-row">
+        <div id="getChannelHandle"><strong>@</strong>চ্যানেলহ্যান্ডেল</div>
+        <div id="getChannelSubscribeNumber"><strong>সাবস্ক্রাইব:</strong> 0</div>
+      </div>
+      <div class="channel-details-row">
+        <div id="getChannelStartDate"><strong>🎥 :</strong> --</div>
+        <div id="getChannelStartCountryName"><strong>🗺️ :</strong> --</div>
+      </div>
+      <div class="channel-details-row">
+        <div id="getTotalVideo"><strong>TV:</strong> 0</div>
+        <div id="getLast90DaysLongVideo"><strong>LV:</strong> 0</div>
+        <div id="getLast90DaysShortsVideo"><strong>SV :</strong> 0</div>
+      </div>
+      <div id="getChannelViewNumber"><strong>মোট ভিউ:</strong> 0</div>
+    </div>
+    <div>
+      
+         
+      
+    <div class="channel-tag">
+      <div class="title-row">
+        <h4>CTag</h4>
+        <button id="copySelectedChannelTags">S.copy</button>
+        <button id="copyAllChannelTags">Copy</button>
+  
+      </div>    
+    <div id="getChannelTagContent">bnjjgggg</div>
+              
+       </div>
+        
+        
+        
+        
+    </div>
+  </section>
+
+  <section class="card content-section hidden">
+    <div class="vTT">Video Time Inquiry (Last 15 days)</div>
+    <div id="7daysVideoTimeTable"></div>
+  </section>
+
+  <section class="card content-section hidden">
+    <div>Last 15 days uploaded video list</div>
+    <div id="7daysVideolist"></div>   
+  </section>
+</main>
+
+<!-- Footer Section -->
+<!-- Footer Section -->
+<footer class="site-footer">
+  <div class="social-links">
+    <a href="https://www.facebook.com/akramul45" target="_blank" aria-label="Facebook">
+      <img src="https://raw.githubusercontent.com/akramul45/Akramul_Resume/refs/heads/main/FB.png" alt="Facebook">
+    </a>
+    <a href="https://www.facebook.com/Attention980i" target="_blank" aria-label="Facebook Page">
+      <img src="https://raw.githubusercontent.com/akramul45/Akramul_Resume/refs/heads/main/FB.png" alt="Facebook Page">
+    </a>
+    <a href="https://t.me/aj45456" target="_blank" aria-label="Telegram">
+      <img src="https://raw.githubusercontent.com/akramul45/Akramul_Resume/refs/heads/main/Tg.png" alt="Telegram">
+    </a>
+    <a href="https://youtube.com/@AJ_980" target="_blank" aria-label="YouTube">
+      <img src="https://raw.githubusercontent.com/akramul45/Akramul_Resume/refs/heads/main/Yt.png" alt="YouTube">
+    </a>
+    <a href="https://www.twitter.com/akramul45" target="_blank" aria-label="X">
+      <img src="https://raw.githubusercontent.com/akramul45/Akramul_Resume/refs/heads/main/X.png" alt="X">
+    </a>
+    <a href="http://www.linkedin.com/in/akramul45" target="_blank" aria-label="LinkedIn">
+      <img src="https://raw.githubusercontent.com/akramul45/Akramul_Resume/refs/heads/main/Ln.png" alt="LinkedIn">
+    </a>
+  </div>
+
+  <p class="copyright">© <span id="year"></span> AJ 980, Akramul. All Rights Reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+  <script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+  
+</body>
+</html>
+ 
